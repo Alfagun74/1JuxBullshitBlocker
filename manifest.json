@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	
+	"name": "1Jux Bullshit Blocker",
+	"version": "1.0",
+	"description": "Block Articles on 1Jux.",
+	"author": "Alper Alkan",
+	"permissions": ["storage", "tabs", "*://*.1jux.net/*"],
+	"background": {"scripts": ["background.js"]},
+	
+	"icons": { 
+		"16": "icon.png",
+		"48": "icon.png",
+		"128": "icon.png"
+	},
+	
+	"browser_action": {
+		"default_icon": "off.png",
+		"default_popup": "popup.html",
+		"default_title": "1Jux Bullshit Blocker"
+	},
+	
+	"content_scripts": [ {
+		"matches": ["*://*.1jux.net/*"],
+		"js": ["deleteBullshit.js"]
+		}
+	]
+}
